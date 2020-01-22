@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>909</width>
+    <height>605</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>书知编辑器</string>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTextEdit" name="txtEdit">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>-1</y>
+      <width>861</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QTextEdit::WidgetWidth</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>909</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actNew"/>
+    <addaction name="actOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actSave"/>
+    <addaction name="actSaveAs"/>
+    <addaction name="actExit"/>
+   </widget>
+   <widget class="QMenu" name="edit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actCut"/>
+    <addaction name="actCopy"/>
+    <addaction name="actPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actClear"/>
+    <addaction name="separator"/>
+    <addaction name="actSearch"/>
+   </widget>
+   <widget class="QMenu" name="help">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actHelp"/>
+    <addaction name="separator"/>
+    <addaction name="actAbout"/>
+   </widget>
+   <widget class="QMenu" name="format">
+    <property name="title">
+     <string>样式</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>自动换行...</string>
+     </property>
+     <addaction name="actNoWrap"/>
+     <addaction name="separator"/>
+     <addaction name="actWidgetWidth"/>
+     <addaction name="actFixedPixelWidth"/>
+    </widget>
+    <addaction name="actFontBold"/>
+    <addaction name="actFontItalic"/>
+    <addaction name="actFontUnder"/>
+    <addaction name="separator"/>
+    <addaction name="actSetTextColor"/>
+    <addaction name="separator"/>
+    <addaction name="actToolbarStyle"/>
+    <addaction name="actTextStyleToolBar"/>
+    <addaction name="separator"/>
+    <addaction name="menu"/>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="edit"/>
+   <addaction name="format"/>
+   <addaction name="help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actNew"/>
+   <addaction name="actOpen"/>
+   <addaction name="actSave"/>
+   <addaction name="actClear"/>
+   <addaction name="separator"/>
+   <addaction name="actCut"/>
+   <addaction name="actCopy"/>
+   <addaction name="actPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actSearch"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actCut">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/cut_128px_1223050_easyicon.net.ico</normaloff>:/images/images/cut_128px_1223050_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>剪切</string>
+   </property>
+   <property name="toolTip">
+    <string>剪切</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actCopy">
+   <property name="icon">
+    <iconset>
+     <normalon>:/images/images/copy_128px_1223049_easyicon.net.ico</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>复制</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actPaste">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/clipboard_128px_1222862_easyicon.net.ico</normaloff>:/images/images/clipboard_128px_1222862_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actNew">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/file_create_128px.ico</normaloff>:/images/images/file_create_128px.ico</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="toolTip">
+    <string>新建文件</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actFontBold">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_bold_104px_1223110_easyicon.net.ico</normaloff>:/images/images/text_bold_104px_1223110_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>粗体</string>
+   </property>
+   <property name="toolTip">
+    <string>粗体</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actFontItalic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_italic_101px_1223112_easyicon.net.ico</normaloff>:/images/images/text_italic_101px_1223112_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>斜体</string>
+   </property>
+   <property name="toolTip">
+    <string>斜体</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actFontUnder">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_underline_32px_1223113_easyicon.net.ico</normaloff>:/images/images/text_underline_32px_1223113_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>下划线</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/folder_opened_128px.ico</normaloff>:/images/images/folder_opened_128px.ico</iconset>
+   </property>
+   <property name="text">
+    <string>打开...</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/floppy_128px_1222830_easyicon.net.ico</normaloff>:/images/images/floppy_128px_1222830_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="toolTip">
+    <string>保存文件</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actExit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/arrow_left_curved_128px_1223140_easyicon.net.ico</normaloff>:/images/images/arrow_left_curved_128px_1223140_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actClear">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/delete_128px_1223051_easyicon.net.ico</normaloff>:/images/images/delete_128px_1223051_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>清空</string>
+   </property>
+   <property name="toolTip">
+    <string>清空内容</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actToolbarStyle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>显示工具栏文字标签</string>
+   </property>
+   <property name="toolTip">
+    <string>显示工具栏文字标签</string>
+   </property>
+  </action>
+  <action name="actNoWrap">
+   <property name="text">
+    <string>关闭自动换行</string>
+   </property>
+   <property name="toolTip">
+    <string>关闭自动换行</string>
+   </property>
+  </action>
+  <action name="actWidgetWidth">
+   <property name="text">
+    <string>按宽度自动换行</string>
+   </property>
+   <property name="toolTip">
+    <string>按宽度自动换行</string>
+   </property>
+  </action>
+  <action name="actFixedPixelWidth">
+   <property name="text">
+    <string>固定像素宽度换行</string>
+   </property>
+   <property name="toolTip">
+    <string>固定像素宽度换行</string>
+   </property>
+  </action>
+  <action name="actSaveAs">
+   <property name="text">
+    <string>另存为...</string>
+   </property>
+   <property name="toolTip">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="actTextStyleToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>显示字体样式工具栏</string>
+   </property>
+   <property name="toolTip">
+    <string>显示字体样式工具栏</string>
+   </property>
+  </action>
+  <action name="actSetTextColor">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/color_palette_128px_1202956_easyicon.net.ico</normaloff>:/images/images/color_palette_128px_1202956_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>调色板</string>
+   </property>
+   <property name="toolTip">
+    <string>调整字体颜色</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actLeftAlign">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_align_left_128px_1223107_easyicon.net.ico</normaloff>:/images/images/text_align_left_128px_1223107_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>左对齐</string>
+   </property>
+   <property name="toolTip">
+    <string>将内容与左边距对齐</string>
+   </property>
+  </action>
+  <action name="actCenter">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_align_center_128px_1223105_easyicon.net.ico</normaloff>:/images/images/text_align_center_128px_1223105_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>居中</string>
+   </property>
+   <property name="toolTip">
+    <string>使内容在界面上居中对齐</string>
+   </property>
+  </action>
+  <action name="actRightAlign">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/text_align_right_128px_1223108_easyicon.net.ico</normaloff>:/images/images/text_align_right_128px_1223108_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>右对齐</string>
+   </property>
+   <property name="toolTip">
+    <string>将内容与左边距对齐</string>
+   </property>
+  </action>
+  <action name="actSearch">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/Search_128px_1190971_easyicon.net.ico</normaloff>:/images/images/Search_128px_1190971_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>查找</string>
+   </property>
+   <property name="toolTip">
+    <string>查找指定文本</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actHelp">
+   <property name="text">
+    <string>获取帮助</string>
+   </property>
+   <property name="toolTip">
+    <string>获取帮助</string>
+   </property>
+  </action>
+  <action name="actAbout">
+   <property name="text">
+    <string>关于...</string>
+   </property>
+   <property name="toolTip">
+    <string>关于书知</string>
+   </property>
+  </action>
+  <action name="actUpdateToGit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/vc_git_128px_1097266_easyicon.net.ico</normaloff>:/images/images/vc_git_128px_1097266_easyicon.net.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Git</string>
+   </property>
+   <property name="toolTip">
+    <string>提交至Git</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actCut</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>cut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
